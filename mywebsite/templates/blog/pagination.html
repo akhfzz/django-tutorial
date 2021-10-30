@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{%block title%}Read Data{%endblock%}
+{%block content%}
+<div class='pagination'>
+	<span class='step-links'>
+		{% if page.has_previous %}
+			<a href='?page={{page.previous_page_number}}'>Sebelumnya</a>
+		{% endif %}
+		<p class='current'>halaman {{page.number}} dari {{page.paginator.num_pages}}</p>
+		{% if page.has_next %}
+			<a href='?page={{page.next_page_number}}'>selanjutnya</a>
+		{% endif %}
+	</span>
+</div>
+{% endblock %}

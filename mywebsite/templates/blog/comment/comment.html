@@ -1,0 +1,11 @@
+{%extends 'blog/base.html' %}
+{% block title %}Comment blog {% endblock %} 
+{%block content %}
+    {% for comment in comments%}
+        <h2 id='content'>{{comment.post}}</h2>
+        <h4>komentarnya: {{comment.body}}</h4>
+        <p>nama komentator: {{comment.nama}}</p>
+        <p>dibuat pada {{comment.created}}</p>
+        <p>status : {{comment.active}}</p>
+    {% endfor %}
+{%endblock%}

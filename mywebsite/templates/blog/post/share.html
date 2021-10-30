@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block title %}Share email {% endblock %}
+{% block content %}
+    {% if sent %}
+        <h1>Pesan berhasil di kirim :) </h1>
+        <p>
+            {{post.title}} berhasil dikirimkan ke {{ form.cleaned_data.to }}
+        </p>
+    {% else %}
+        <h1>Share {{post.title}}  by email</h1>
+        <form method='POST'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type='submit' value='kirim email'/>
+        </form>
+    {% endif %}
+{% endblock %}
