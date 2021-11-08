@@ -32,5 +32,4 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('post', 'nama', 'created')
     search_fields = ('body', 'nama')
     raw_id_fields = ('post',)
-    date_hierarchy = 'created'
     ordering = ('created',)
